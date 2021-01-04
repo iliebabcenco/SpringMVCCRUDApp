@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>New Person</title>
@@ -12,23 +13,29 @@
     <div style="margin: 1%">
         <label for="name">Name</label>
         <input id="name" type="text" th:field="*{name}">
+        <div style="color:red;" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
     </div>
 
     <div style="margin: 1%">
         <label for="surname">Surname</label>
         <input id="surname" type="text" th:field="*{surname}">
-        </br>
+        <div style="color:red;" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></div>
+    </div>
+
+    <div style="margin: 1%">
+        <label for="age">Age</label>
+        <input id="age" type="text" th:field="*{age}">
+        <div style="color:red;" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
     </div>
 
     <div style="margin: 1%">
         <label for="email">Email</label>
         <input id="email" type="email" th:field="*{email}">
-        </br>
+        <div style="color:red;" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
     </div>
 
     <div style="margin: 1%">
         <input type="submit" value="Add Person">
-        </br>
     </div>
 
 </form>
